@@ -7,15 +7,32 @@ public class Calculadora {
         this.numero2 = numero2;
     }
 
-    public String getDivision(String numero1, String numero2){
+    public String getNumero1() {
+        return numero1;
+    }
+
+    public void setNumero1(String numero1) {
+        this.numero1 = numero1;
+    }
+
+    public String getNumero2() {
+        return numero2;
+    }
+
+    public void setNumero2(String numero2) {
+        this.numero2 = numero2;
+    }
+
+    public String getDivision(){
         String resultadoDivision;
 
-        if(convertToDouble(numero2) == 0){
-            return resultadoDivision = "No se puede dividir por cero";
+        if(convertToDouble(getNumero2()) == 0){
+            resultadoDivision = "No se puede dividir por cero";
         }else {
-            double resultado = convertToDouble(numero1) / convertToDouble(numero2);
-            return resultadoDivision = "La division es: " + resultado ;
+            double resultado = convertToDouble(getNumero1()) / convertToDouble(getNumero2());
+           resultadoDivision = "La division es: " + resultado ;
         }
+        return resultadoDivision;
     }
 
     public static double convertToDouble(String numero){
