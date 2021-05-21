@@ -7,7 +7,7 @@ public class Main {
         System.out.println("Hola Mundo");
 
         Persona persona = new Persona("Diego", "Aristizabal");
-        persona.ObtenerNombre();
+        persona.getName();
 
         Calculator calculadora = new Calculator();
         calculadora.setNumber1("10.0");
@@ -17,6 +17,20 @@ public class Main {
         /*Se van a ordenar una lista con el uso de lambdas compareTo*/
         List<Character> list = getCharacters();
         ordenar(list);
+
+        //Metodos de referencia con objetos
+
+        Persona persona2 = getPersona("Daniel","Aristizabal");
+        persona2.getName();
+    }
+
+    private static Persona getPersona(String name, String lastName) {
+        //Crear persona con Lambda
+        //IUser user = (x,y) -> new Persona(x,y);
+        //Metodo de referencia
+        IUser user = Persona::new;
+        Persona persona2 = user.create(name,lastName);
+        return persona2;
     }
 
     private static List<Character> getCharacters() {
