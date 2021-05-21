@@ -30,8 +30,9 @@ public class Main {
     }
 
     public static void ordenar(List<Character> lista){
-        Collections.sort(lista, (Character letter1, Character letter2) ->
-                letter1.compareTo(letter2));
+        Collections.sort(lista, Character::compareTo);
+        /*Collections.sort(lista, (Character letter1, Character letter2) ->
+                letter1.compareTo(letter2));*/
         getListOfLetters(lista);
     }
 
