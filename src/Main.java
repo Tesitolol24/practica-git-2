@@ -37,8 +37,14 @@ public class Main {
 
 
     public static void getListOfLetters(List<Character> list){
+        //Método de referencia
+        list.forEach(System.out::println);
+        /*Forma convencional
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).charValue());
         }
+        Lambda
+        list.forEach(letter -> System.out.println(letter));
+        */
     }
 }
