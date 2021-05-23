@@ -5,7 +5,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        showInformation();
+    }
 
+    private static void showInformation(){
         Persona persona = new Persona("Diego", "Aristizabal");
         persona.getName();
 
@@ -34,8 +37,6 @@ public class Main {
         System.out.println("La cantidad de elementos dentro de la lista es: ");
         stream.contar();
     }
-
-
 
     private static Persona getPersona(String name, String lastName) {
         //Crear persona con Lambda
