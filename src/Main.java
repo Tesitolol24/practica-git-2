@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         showInformation();
     }
 
-    private static void showInformation(){
+    private static void showInformation() throws InterruptedException {
         Persona persona = new Persona("Diego", "Aristizabal");
         persona.getName();
 
@@ -36,6 +36,26 @@ public class Main {
         System.out.println();
         System.out.println("La cantidad de elementos dentro de la lista es: ");
         stream.contar();
+
+        //Usando Date
+        Date date = new Date();
+        System.out.println("\nComparación entre antes y despues usando LocalDate");
+        date.isBeforeOrAfterBetweenDates();
+
+        System.out.println("\nComparación entre antes y despues usando LocalTime");
+        date.isBeforeOrAfterBetweenTimes();
+
+        System.out.println("\nComparación entre antes y despues usando LocalDateTime");
+        date.isBeforeOrAfterBetweenDateAndTime();
+
+        System.out.println("\nTiempo de espera en el hilo");
+        date.measureTheTime();
+
+        System.out.println("\nTranscuros entre años meses y dias");
+        date.periodBetweenDates();
+
+        System.out.println("\nConvertir una fecha");
+        date.convertDates();
     }
 
     private static Persona getPersona(String name, String lastName) {
